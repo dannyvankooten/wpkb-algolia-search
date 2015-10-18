@@ -1,0 +1,10 @@
+{
+  "require": {
+    "algolia/algoliasearch-client-php": "^1.6"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
