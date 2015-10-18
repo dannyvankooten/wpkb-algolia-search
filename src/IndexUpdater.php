@@ -37,7 +37,18 @@ class IndexUpdater {
 	 */
 	public function update_post_in_index( $post_id, $post, $is_existing_post ) {
 
+		// only run for KB articles
 		if( $post->post_type !== Plugin::POST_TYPE_NAME ) {
+			return false;
+		}
+
+		// only run for published posts
+		if( $post->post_status !== 'publish' ) {
+			return false;
+		}
+
+		// don't run for revisions or autosaves
+		if( wp_is_post_revision( $post ) || wp_is_post_autosave( $post ) ) {
 			return false;
 		}
 
