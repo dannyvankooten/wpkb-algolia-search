@@ -25,7 +25,9 @@ class AssetManager {
 		wp_localize_script( 'wpkb-algolia-search', 'wpkb_algolia_config',
 			array(
 				'app_id' => WPKB_ALGOLIA_APP_ID,
-				'api_key' => WPKB_ALGOLIA_API_KEY,
+
+				// Important! Use "search only" API key here.
+				'api_key' => WPKB_ALGOLIA_API_KEY_SEARCH_ONLY,
 				'index_name' => WPKB_ALGOLIA_INDEX_NAME
 			)
 		);

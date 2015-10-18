@@ -19,7 +19,12 @@ add_action( 'plugins_loaded', function() {
 	define( 'WPKB_ALGOLIA_FILE', __FILE__ );
 
 	// make sure config constants are defined
-	$constants = array( 'WPKB_ALGOLIA_APP_ID', 'WPKB_ALGOLIA_API_KEY', 'WPKB_ALGOLIA_INDEX_NAME' );
+	$constants = array(
+		'WPKB_ALGOLIA_APP_ID',
+		'WPKB_ALGOLIA_API_KEY',
+		'WPKB_ALGOLIA_INDEX_NAME',
+		'WPKB_ALGOLIA_API_KEY_SEARCH_ONLY',
+	);
 	foreach( $constants as $constant ) {
 		if( ! defined( $constant ) ) {
 			define( $constant, '' );
