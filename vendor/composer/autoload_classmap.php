@@ -30,5 +30,9 @@ return array(
     'AlgoliaSearch\\Tests\\URLEncodeTest' => $vendorDir . '/algolia/algoliasearch-client-php/tests/AlgoliaSearch/Tests/URLEncodeTest.php',
     'AlgoliaSearch\\Version' => $vendorDir . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Version.php',
     'WPKB\\Algolia\\AssetManager' => $baseDir . '/src/AssetManager.php',
+    'WPKB\\Algolia\\Client' => $baseDir . '/src/Client.php',
+    'WPKB\\Algolia\\Helper' => $baseDir . '/src/Helper.php',
     'WPKB\\Algolia\\IndexCommand' => $baseDir . '/src/IndexCommand.php',
+    'WPKB\\Algolia\\IndexUpdater' => $baseDir . '/src/IndexUpdater.php',
+    'WPKB\\Algolia\\Searcher' => $baseDir . '/src/Searcher.php',
 );

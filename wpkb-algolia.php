@@ -31,10 +31,11 @@ add_action( 'plugins_loaded', function() {
 	if( defined( 'WP_CLI' ) && WP_CLI ) {
 		WP_CLI::add_command( 'wpkb-algolia', 'WPKB\\Algolia\\IndexCommand' );
 		// register command
+	} elseif( is_admin() ) {
+		add_action( 'init', array( 'WPKB\\Algolia\\IndexUpdater', 'init' ) );
 	}
 
-	// register search stuff
+	add_action( 'wpkb_search', array( 'WPKB\\Algolia\\Searcher', 'init' ) );
 	add_action( 'template_redirect', array( 'WPKB\\Algolia\\AssetManager', 'init' ), 20 );
-
 } );
 
