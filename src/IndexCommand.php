@@ -34,7 +34,7 @@ class IndexCommand extends WP_CLI_Command {
 		while( is_array( $posts ) && count( $posts ) > 0 ) {
 			$posts = get_posts(
 				array(
-					'post_type' => Plugin::POST_TYPE_NAME,
+					'post_type' => 'wpkb-article',
 					'post_status' => 'publish',
 					'numberposts' => 500,
 					'paged' => $batch_number

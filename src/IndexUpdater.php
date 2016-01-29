@@ -38,7 +38,7 @@ class IndexUpdater {
 	public function update_post_in_index( $post_id, $post, $is_existing_post ) {
 
 		// only run for KB articles
-		if( $post->post_type !== Plugin::POST_TYPE_NAME ) {
+		if( $post->post_type !== 'wpkb-article' ) {
 			return false;
 		}
 
