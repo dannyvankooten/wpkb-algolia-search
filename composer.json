@@ -1,4 +1,14 @@
 {
+  "name": "dannyvankooten/wpkb-algolia-search",
+  "description": "Algolia search indexing for WP Knowledge Base",
+  "type": "wordpress-plugin",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Danny van Kooten",
+      "email": "dannyvankooten@gmail.com"
+    }
+  ],
   "require": {
     "algolia/algoliasearch-client-php": "^1.6"
   },
