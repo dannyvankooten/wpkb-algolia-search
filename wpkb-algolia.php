@@ -18,7 +18,7 @@ add_action( 'plugins_loaded', function() {
 	define( 'WPKB_ALGOLIA_VERSION', '0.1' );
 	define( 'WPKB_ALGOLIA_FILE', __FILE__ );
 
-	// make sure config constants are defined
+	// make sure config constants are defined, if not: bail.
 	$constants = array(
 		'WPKB_ALGOLIA_APP_ID',
 		'WPKB_ALGOLIA_API_KEY',
@@ -27,7 +27,7 @@ add_action( 'plugins_loaded', function() {
 	);
 	foreach( $constants as $constant ) {
 		if( ! defined( $constant ) ) {
-			define( $constant, '' );
+			return;
 		}
 	}
 	
