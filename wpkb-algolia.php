@@ -30,8 +30,10 @@ add_action( 'plugins_loaded', function() {
 			define( $constant, '' );
 		}
 	}
-
-	require __DIR__ . '/vendor/autoload.php';
+	
+	if( ! class_exists( 'WPKB\\Aoglia\\Searcher' ) ) {
+		require __DIR__ . '/vendor/autoload.php';
+	}
 
 	if( defined( 'WP_CLI' ) && WP_CLI ) {
 		WP_CLI::add_command( 'wpkb-algolia', 'WPKB\\Algolia\\IndexCommand' );
