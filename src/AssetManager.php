@@ -21,7 +21,7 @@ class AssetManager {
 	 */
 	public function enqueue_assets() {
 
-		wp_enqueue_script( 'wpkb-algolia-search', plugins_url( '/assets/js/search.js', WPKB_ALGOLIA_FILE ), array(), WPKB_ALGOLIA_VERSION, true );
+		wp_enqueue_script( 'wpkb-algolia-search', plugins_url( '/assets/js/search.js', WPKB_ALGOLIA_FILE ), array( 'jquery' ), WPKB_ALGOLIA_VERSION, true );
 		wp_localize_script( 'wpkb-algolia-search', 'wpkb_algolia_config',
 			array(
 				'app_id' => WPKB_ALGOLIA_APP_ID,
