@@ -58,7 +58,7 @@ class IndexUpdater {
 		$index = Client::initIndex( WPKB_ALGOLIA_INDEX_NAME );
 
 		try{
-			$index->addObject( $object, $post_id );
+			$index::addObject( $object, $post_id );
 		} catch( \Exception $e ) {
 			// ugh.. fail silently?
 			return;

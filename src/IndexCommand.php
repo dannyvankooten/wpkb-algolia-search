@@ -45,7 +45,7 @@ class IndexCommand extends WP_CLI_Command {
 			$posts = array_map( array( $helper, 'post_for_index' ), $posts );
 
 			try{
-				$index->addObjects( $posts );
+				$index::addObjects( $posts );
 			} catch( \Exception $e ) {
 				// uh oh
 				WP_CLI::error( $e->getMessage() );
