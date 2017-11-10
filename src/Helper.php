@@ -37,7 +37,6 @@ class Helper {
 			)
 		);
 
-
 		$array = [
 			'objectID' => $post->ID,
 			'title' => $post->post_title,

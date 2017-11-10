@@ -44,7 +44,14 @@ class IndexCommand extends WP_CLI_Command {
 			// Create array of post properties we want to use in our index
 			$posts = array_map( array( $helper, 'post_for_index' ), $posts );
 
-			$index->addObjects( $posts );
+			try{
+				$index->addObjects( $posts );
+			} catch( \Exception $e ) {
+				// uh oh
+				WP_CLI::error( $e->getMessage() );
+				return;
+			}
+
 			$batch_number++;
 		}
 
