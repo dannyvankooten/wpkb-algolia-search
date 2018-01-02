@@ -15,7 +15,7 @@ Domain Path: /languages/
  */
 add_action( 'plugins_loaded', function() {
 
-	define( 'WPKB_ALGOLIA_VERSION', '0.1' );
+	define( 'WPKB_ALGOLIA_VERSION', '0.2' );
 	define( 'WPKB_ALGOLIA_FILE', __FILE__ );
 
 	// make sure config constants are defined, if not: bail.
@@ -33,6 +33,7 @@ add_action( 'plugins_loaded', function() {
 	
 	if( ! class_exists( 'WPKB\\Aoglia\\Searcher' ) ) {
 		require __DIR__ . '/vendor/autoload.php';
+		require __DIR__ . '/src/functions.php';
 	}
 
 	if( defined( 'WP_CLI' ) && WP_CLI ) {

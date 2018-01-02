@@ -27,7 +27,7 @@ class IndexCommand extends WP_CLI_Command {
 		$posts = array( '' );
 		$site_url = get_site_url();
 
-		$index = Client::initIndex( WPKB_ALGOLIA_INDEX_NAME );
+		$index = wpkb_get_algolia_index();
 		$helper = new Helper();
 
 		// keep looping while there are posts left (while incrementing "paged" argument)
@@ -45,7 +45,7 @@ class IndexCommand extends WP_CLI_Command {
 			$posts = array_map( array( $helper, 'post_for_index' ), $posts );
 
 			try{
-				$index::addObjects( $posts );
+				$index->addObjects( $posts );
 			} catch( \Exception $e ) {
 				// uh oh
 				WP_CLI::error( $e->getMessage() );

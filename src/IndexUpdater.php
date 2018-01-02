@@ -54,11 +54,10 @@ class IndexUpdater {
 
 		$helper = new Helper();
 		$object = $helper->post_for_index( $post );
-
-		$index = Client::initIndex( WPKB_ALGOLIA_INDEX_NAME );
+		$index = wpkb_get_algolia_index();
 
 		try{
-			$index::addObject( $object, $post_id );
+			$index->addObject( $object, $post_id );
 		} catch( \Exception $e ) {
 			// ugh.. fail silently?
 			return;
@@ -71,7 +70,7 @@ class IndexUpdater {
 	 * @param $post_id
 	 */
 	public function remove_post_from_index( $post_id ) {
-		$index = Client::initIndex( WPKB_ALGOLIA_INDEX_NAME );
+		$index = wpkb_get_algolia_index();
 		$index->deleteObject( $post_id );
 	}
 

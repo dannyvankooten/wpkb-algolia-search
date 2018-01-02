@@ -31,7 +31,7 @@ class Searcher {
 	 */
 	public function search( $results, $query ) {
 
-		$index = $index = Client::initIndex( WPKB_ALGOLIA_INDEX_NAME );
+		$index = wpkb_get_algolia_index();
 		$result = $index->search( $query );
 
 		if( ! is_array( $result ) ) {
