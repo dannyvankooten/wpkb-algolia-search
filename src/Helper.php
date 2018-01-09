@@ -16,7 +16,7 @@ class Helper {
 	 *
 	 */
 	public function __construct() {
-		$this->site_url = get_site_url();
+		$this->site_url = get_option('home');
 	}
 
 	/**
@@ -37,6 +37,8 @@ class Helper {
 			)
 		);
 
+		$permalink = get_permalink( $post->ID );
+
 		$array = [
 			'objectID' => $post->ID,
 			'title' => $post->post_title,
@@ -45,7 +47,8 @@ class Helper {
 			'keywords' => $keywords,
 			'created' => $post->post_date_gmt,
 			'updated' => $post->post_modified_gmt,
-			'path' => str_replace( $this->site_url, '', get_permalink( $post->ID ) )
+			'path' => str_replace( $this->site_url, '', $permalink ),
+			'url' => $permalink,
 		];
 
 
