@@ -25,8 +25,6 @@ class IndexCommand extends WP_CLI_Command {
 	public function index() {
 		$batch_number = 1;
 		$posts = array( '' );
-		$site_url = get_site_url();
-
 		$index = wpkb_get_algolia_index();
 		$helper = new Helper();
 
