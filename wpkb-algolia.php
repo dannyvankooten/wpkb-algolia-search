@@ -4,7 +4,7 @@ Plugin Name: WP Knowledge Base - Algolia Search
 Plugin URI: https://mc4wp.com/kb/
 Description: Power your KB search using Algolia
 Author: ibericode
-Version: 0.2.1
+Version: 0.3.0
 Author URI: https://ibericode.com
 Text Domain: wpkb-algolia
 Domain Path: /languages/
