@@ -14,12 +14,6 @@ m.send(y)})},a.prototype._request.fallback=function(e,t){return e=l(e,t.headers)
 	var keydownTimeout = 0;
 	var lastQuery = '';
 
-	index.setSettings({
-	  attributesToSnippet: [
-	    'content'	  
-	 	]
-	});
-
 	// event handlers
 	$input.keydown(function() {
 		if( keydownTimeout ) {
@@ -70,7 +64,7 @@ m.send(y)})},a.prototype._request.fallback=function(e,t){return e=l(e,t.headers)
 		for( var i=0; i < result.hits.length; i++ ) {
 			html += '<div class=\"wpkb-search-results-item\">';
 			html += '<h4 class=\"wpkb-search-results-item-header\"><a href="'+ result.hits[i].path + '">'+ result.hits[i]._highlightResult.title.value +'</a></h4>';
-			html += '<p>'+ result.hits[i]._snippetResult.content.value + '</p>';
+			html += '<p>'+ result.hits[i].content.substring(0, 100) + '...</p>';
 			html += '</div>';
 		}
 
