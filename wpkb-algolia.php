@@ -15,7 +15,7 @@ Domain Path: /languages/
  */
 add_action( 'plugins_loaded', function() {
 
-	define( 'WPKB_ALGOLIA_VERSION', '0.2.1' );
+	define( 'WPKB_ALGOLIA_VERSION', '0.3.0' );
 	define( 'WPKB_ALGOLIA_FILE', __FILE__ );
 
 	// make sure config constants are defined, if not: bail.
