@@ -39,10 +39,17 @@ class Helper {
 
 		$permalink = get_permalink( $post->ID );
 
+		// strip HTML tags (but keep content)
+		$content = strip_tags( $post->post_content );
+
+		// strip shortcodes (but keep content)
+		$content = preg_replace( '/\[(\/)?[^\]]+\]/', '', $content );
+
+		// what we send to Algolia
 		$array = [
 			'objectID' => $post->ID,
 			'title' => $post->post_title,
-			'content' => strip_tags( $post->post_content ),
+			'content' => $content,
 			'categories' => $categories,
 			'keywords' => $keywords,
 			'created' => $post->post_date_gmt,
@@ -51,8 +58,7 @@ class Helper {
 			'url' => $permalink,
 		];
 
-
-		// @todo take wpkb_rating into account
+		// TODO: take wpkb_rating into account
 		return $array;
 	}
 }
